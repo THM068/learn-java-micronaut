@@ -18,8 +18,6 @@ public class PetServiceTest {
     @Inject
     PetService petService;
 
-
-   
     @Test
     void testExecutable() {
         ExecutableMethod<PetService, Object> em =

@@ -4,13 +4,13 @@ public class SigninRequest {
 
     private String identifier;
     private String password;
-    private String serviceName;
+    private String servicename;
     private boolean longlived = false;
 
     public SigninRequest(String identifier, String password, String servicename, boolean longlived) {
         this.identifier = identifier;
         this.password = password;
-        this.serviceName = servicename;
+        this.servicename = servicename;
         this.longlived = longlived;
     }
 
@@ -23,7 +23,7 @@ public class SigninRequest {
     }
 
     public String getServicename() {
-        return serviceName;
+        return servicename;
     }
 
     public boolean isLonglived() {
