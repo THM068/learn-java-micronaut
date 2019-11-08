@@ -6,20 +6,24 @@ import io.micronaut.http.HttpResponse;
 import io.micronaut.http.client.exceptions.HttpClientResponseException;
 import io.micronaut.test.annotation.MicronautTest;
 import learn.java.api.model.SigninSuccessModel;
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import javax.inject.Inject;
 import java.util.LinkedHashMap;
 import java.util.Optional;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertTrue;
+import static org.junit.jupiter.api.Assertions.*;
 
 @MicronautTest
 public class CybertronClientTest {
 
     @Inject
     CybertronSigninClient cybertronSigninClient;
+    @BeforeEach
+    void setup() {
+
+    }
 
     @Test
     @Property(name = "app.url", value = "https://f02agg.oogway.bskyb.com")
@@ -47,6 +51,7 @@ public class CybertronClientTest {
                 System.out.println(errorCode.getErrorcode());
                 System.out.println(errorCode.getService());
             }
+            fail("Cybertron client failed to siginin");
         }
 
 

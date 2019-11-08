@@ -19,7 +19,6 @@ public class SigninClientTest {
     @Inject
     SigninClient signinClient;
 
-
     @Test
     void signinToOOgway() {
         SigninRequest request = new SigninRequest("uzer", "test1234", "news",false);
@@ -31,17 +30,17 @@ public class SigninClientTest {
         System.out.println(signinSuccessModel);
         assertTrue(signinSuccessModel.getUsername().equalsIgnoreCase(request.getIdentifier()));
         assertTrue(signinSuccessModel.getToken().startsWith("00-"));
-//        assertTrue(signinSuccessModel.getSecuretoken().startsWith("S0-"));
-//        assertTrue(signinSuccessModel.getMessotoken().startsWith("01-"));
-//        assertTrue(signinSuccessModel.getSecuremessotoken().startsWith("S1-"));
+        assertTrue(signinSuccessModel.getSecuretoken().startsWith("S0-"));
+        assertTrue(signinSuccessModel.getMessotoken().startsWith("01-"));
+        assertTrue(signinSuccessModel.getSecuremessotoken().startsWith("S1-"));
     }
 
     @Test
     void returns_error_code_from_wrong_credentials() {
-        HttpResponse<SigninSuccessModel> response;
+
         SigninRequest request = new SigninRequest("uzer", "test123", "news",false);
         try {
-            response = signinClient.signin(request);
+            signinClient.signin(request);
             fail("Did not throw expected exception");
         }
         catch (HttpClientResponseException e) {
@@ -52,9 +51,6 @@ public class SigninClientTest {
                 assertEquals("100",errorCode.getErrorcode());
             }
         }
-
-
-
     }
 
 }

@@ -1,9 +1,7 @@
 package learn.java.api.cybertron.model;
-
 import io.micronaut.http.annotation.Header;
 import io.micronaut.http.annotation.Headers;
 import io.micronaut.http.client.annotation.Client;
-import learn.java.api.model.ErrorCode;
 
 @Client(value = "${app.url:https://f03agg.oogway.bskyb.com}", errorType = ErrorMessage.class)
 @Headers( {
