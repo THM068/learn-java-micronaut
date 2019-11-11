@@ -7,7 +7,7 @@ import io.micronaut.http.client.annotation.Client;
 @Headers( {
         @Header(name="Accept",value="application/vnd.bridge.v1+json"),
         @Header(name="Content-type",value="application/vnd.bridge.v1+json"),
-        @Header(name="Authorization",value="Basic cmFuZ29fYnJpZGdlOnJhbmdv"),
+//        @Header(name="Authorization",value="Basic cmFuZ29fYnJpZGdlOnJhbmdv"),
         @Header(name="X-SkyOTT-Proposition",value="SKY"),
         @Header(name="X-SkyOTT-Provider",value="SKY"),
         @Header(name="X-SkyOTT-Territory",value="GB")
