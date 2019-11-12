@@ -14,4 +14,5 @@ import learn.java.api.model.ErrorCode;
         @Header(name="Territory",value="GB"),
 })
 public interface SigninClient  extends SigninOperations {
+
 }
