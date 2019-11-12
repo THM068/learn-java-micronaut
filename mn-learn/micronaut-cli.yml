@@ -1,0 +1,5 @@
+profile: service
+defaultPackage: mn.learn
+---
+testFramework: spock
+sourceLanguage: groovy

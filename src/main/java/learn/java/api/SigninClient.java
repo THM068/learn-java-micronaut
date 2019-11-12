@@ -9,7 +9,7 @@ import learn.java.api.model.ErrorCode;
 @Headers({
         @Header(name="Accept",value="application/vnd.oogway.v4+json"),
         @Header(name="Content-type",value="application/vnd.oogway.v4+json"),
-        @Header(name="Authorization",value="Basic b29nd2F5Om9vZ3dheTEyMw=="),
+        @Header(name="Authorization",value="Basic xxxxx"),
         @Header(name="Provider",value="SKY"),
         @Header(name="Territory",value="GB"),
 })
