@@ -23,6 +23,14 @@ object Main {
 
     val d1 = Dog("Scooby", "Doberman")
     println(d1.toString)
+
+    val nsprofileid = "me"
+
+    println(s" ----> ${nsprofileid eq "me"}")
+
+    var set = Set("a", "b")
+
+    println(set.exists(_ equalsIgnoreCase "a") )
   }
 }
 case class Dog(name: String, breed: String)

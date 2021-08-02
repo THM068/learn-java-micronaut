@@ -35,5 +35,12 @@ object Main  {
     println(s"drop ${name.drop(2)}")
 
     println(s"dropRight ${name.dropRight(4)}")
+
+    val xValues = 1 to 4
+    val yValues = 1 to 2
+    val coordinates = for {
+      x <- xValues
+      y <- yValues
+    } yield (x, y)
   }
 }

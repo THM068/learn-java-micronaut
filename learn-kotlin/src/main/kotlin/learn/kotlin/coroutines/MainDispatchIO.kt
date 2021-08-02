@@ -2,22 +2,12 @@ package learn.kotlin.coroutines
 
 import kotlinx.coroutines.*
 
-fun main() {
-    runBlocking {
-        launch {
-                fetchData()
-        }
-
-        println("it is over ...")
-    }
+suspend fun main() = coroutineScope(){
+    println(retrieve())
 }
 
-suspend fun fetchData() {
-    val result = get("developer.android.com")
-    println("The result is $result" )
-}
-
-suspend fun get(url: String) = withContext(Dispatchers.IO){
-    delay(5000)
-     "Hello World"
+suspend fun retrieve() = withContext(Dispatchers.IO) {
+    println(Thread.currentThread().name)
+    delay(2000)
+    "hello"
 }

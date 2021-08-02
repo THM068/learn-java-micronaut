@@ -2,7 +2,23 @@ package learn.kotlin.coroutines
 
 import kotlinx.coroutines.*
 
-fun main() = runBlocking { // this: CoroutineScope
+suspend fun main() = coroutineScope {
+    val x = async {
+        println(Thread.currentThread().name)
+        delay(1500)
+        5+3
+    }
+    val y = async {
+        println(Thread.currentThread().name)
+        delay(1000)
+        9+1
+    }
+
+    val result = x.await() + y.await()
+    println(result)
+}
+
+fun main_1() = runBlocking { // this: CoroutineScope
     launch {
         delay(200L)
         println("Task from runBlocking")

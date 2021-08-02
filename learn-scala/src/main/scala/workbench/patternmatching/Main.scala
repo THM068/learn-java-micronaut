@@ -2,23 +2,12 @@ package workbench.patternmatching
 
 object Main {
   def main(args: Array[String]): Unit = {
-    val stuff = "blue"
 
-    val mystuff = stuff match {
-      case "red" => println("RED"); 1
-      case "blue" => println("BLUE"); 2
-      case _ => println(stuff); 0
-    }
-    println(mystuff)
+    def sum(a: Int)(b: Int)( c: Int) = a + b + c
 
-    val foodItem = "porridge"
+    val part = sum(2)(3)(_: Int)
 
-    def goldieloks(expr: Any) = expr match {
-      case (`foodItem`) => "eating"
-      case ("chair", "Mama") ⇒ "sitting"
-      case ("bed", "Baby") ⇒ "sleeping"
-      case _ ⇒ "what?"
-    }
+    println(part(4))
   }
 
   val secondElement = List(1, 2, 3) match {
@@ -27,4 +16,15 @@ object Main {
   }
 
   println(secondElement)
+}
+
+case class Person(name: String)
+
+class TestOne extends A with B
+
+trait A {
+  println("hello")
+}
+trait B {
+  println("hello 2")
 }
